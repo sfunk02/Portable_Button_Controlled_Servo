@@ -1,5 +1,5 @@
-//Sam Funk
 //Portable Servo
+//Sam Funk
 //Uses two buttons to turn a servo in both directions.
 
 #include <Servo.h>    //Adds the servo library
@@ -23,9 +23,9 @@ void setup() {
 void loop() {
   btn1State = digitalRead(btn1Pin);   
   btn2State = digitalRead(btn2Pin);
-  if (btn1State == HIGH && angle < 180) {
-    Serial.println("Button 1 is on");
-    myServo.write(angle + 5);
+  if (btn1State == HIGH && angle < 180) {       //When I press Button 1
+    Serial.println("Button 1 is on");           //the serial monitor displays that the button is on
+    myServo.write(angle + 5);                   //and the servo turns clockwise.
     angle = (angle + 5);
   }
   if (btn2State == HIGH && angle > 0) {
